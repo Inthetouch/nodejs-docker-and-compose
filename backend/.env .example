@@ -1,0 +1,7 @@
+POSTGRES_USER= # имя пользователя PostgreSQL
+POSTGRES_PASSWORD= # пароль пользователя БД
+POSTGRES_DB= # имя базы данных
+POSTGRES_HOST= # хост для подключения к БД (например, database)
+POSTGRES_PORT= # порт для подключения к БД (обычно 5432)
+POSTGRES_PGDATA= # директория с данными БД (например, /var/lib/postgresql/data/pgdata)
+JWT_SECRET= # секретный ключ для генерации JWT токенов
