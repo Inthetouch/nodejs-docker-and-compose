@@ -9,7 +9,7 @@ COPY . .
 RUN npm run build
 
 
-FROM node: 16-alpine
+FROM node:16-alpine
 WORKDIR /app
 
 RUN nppm i -g pm2
