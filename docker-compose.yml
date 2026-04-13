@@ -7,8 +7,10 @@ services:
     restart: always
     env_file:
       - .env
+    environment:
+      - PGDATA=${POSTGRES_PGDATA}
     volumes:
-      - pgdata:/var/lib/postgresql/data/pgdata
+      - pgdata:/var/lib/postgresql/data
 
   backend:
     build: ./backend

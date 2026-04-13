@@ -12,11 +12,11 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'student',
-      password: 'student',
-      database: 'kupipodariday',
+      host: process.env.POSTGRES_HOST || 'localhost',
+      port: parseInt(process.env.POSTGRES_PORT, 10) || 5432,
+      username: process.env.POSTGRES_USER || 'student',
+      password: process.env.POSTGRES_PASSWORD || 'student',
+      database: process.env.POSTGRES_DB || 'kupipodariday',
       autoLoadEntities: true,
       synchronize: true,
     }),

@@ -12,7 +12,7 @@ RUN npm run build
 FROM node:16-alpine
 WORKDIR /app
 
-RUN nppm i -g pm2
+RUN npm i -g pm2
 
 COPY package*.json ./
 
