@@ -84,4 +84,12 @@ export class UsersService {
       where: [{ username: query }, { email: query }],
     });
   }
+
+  async findWishesByUsername(username: string) {
+    const user = await this.userRepository.findOne({
+      where: { username },
+      relations: ['wishes', 'wishes.owner', 'wishes.offers'], 
+    });
+    return user ? user.wishes : [];
+  }
 }

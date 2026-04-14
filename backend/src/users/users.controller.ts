@@ -27,9 +27,19 @@ export class UsersController {
     return this.usersService.updateOne(req.user.id, updateUserDto);
   }
 
+  @Get('me/wishes')
+  async getOwnWishes(@Req() req) {
+    return this.usersService.findWishesByUsername(req.user.username);
+  }
+
   @Post('find')
   async findMany(@Body('query') query: string) {
     return this.usersService.findMany(query);
+  }
+
+  @Get(':username/wishes')
+  async getUserWishes(@Param('username') username: string) {
+    return this.usersService.findWishesByUsername(username);
   }
 
   @Get(':username')
